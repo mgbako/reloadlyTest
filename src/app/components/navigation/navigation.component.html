@@ -1,0 +1,19 @@
+<mat-toolbar>
+  <!-- <button
+    type="button"
+    aria-label="Toggle sidenav"
+    mat-icon-button
+    (click)="drawer.toggle()"
+    *ngIf="isHandset$ | async">
+    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+  </button> -->
+  <span>Where is the World?</span>
+  <div class="left">
+    <mat-slide-toggle (change)="onDarkModeSwitched($event)">
+      <mat-icon aria-label="Side nav toggle icon">dark_mode</mat-icon>
+      <span>Dark Mode!</span>
+      
+    </mat-slide-toggle>
+    
+  </div>
+</mat-toolbar>
