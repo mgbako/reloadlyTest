@@ -17,3 +17,10 @@
     
   </div>
 </mat-toolbar>
+
+<div fxLayout="column" fxLayoutAlign="center">
+
+  <mat-chip-list aria-label="Fish selection" >
+    <mat-chip *ngFor="let country of (selectedCountries$ | async).visitedCountries">{{ country }}</mat-chip>
+  </mat-chip-list>
+</div>

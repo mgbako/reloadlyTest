@@ -8,7 +8,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import {MatChipsModule} from '@angular/material/chips';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [NavigationComponent],
@@ -20,7 +21,9 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatChipsModule,
+    FlexLayoutModule
   ],
   exports: [NavigationComponent]
 })

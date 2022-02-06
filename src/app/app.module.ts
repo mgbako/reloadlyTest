@@ -13,6 +13,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import * as appStore from './store/app.reducer';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent
@@ -32,6 +33,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
+    FlexLayoutModule,
     AppRoutingModule,
   ],
   providers: [],
