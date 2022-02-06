@@ -20,6 +20,14 @@ export class CountriesComponent implements OnInit {
   selectedRegion:string = ''
   term:string = '';
 
+  listArray:CountryModel[] = [];
+  direction = "";
+  throttle = 300;
+  scrollDistance = 1;
+  scrollUpDistance = 2;
+  addition = 10;
+  sum = 10;
+
   constructor(private countrService: CountryService, private store:Store<{LoadCountries:any}>, private router: Router) { }
 
   ngOnInit(): void {
@@ -68,5 +76,42 @@ export class CountriesComponent implements OnInit {
 
   viewDetail(country:CountryModel){
     this.router.navigate(['/', country.name.common]);
+  }
+
+  onScrollDown(ev: any) {
+    console.log("scrolled down!!", ev);
+
+    this.sum += this.addition
+    this.appendItems();
+    
+    this.direction = "scroll down";
+  }
+
+  onScrollUp(ev: any) {
+    console.log("scrolled up!", ev);
+    this.sum += this.addition
+    this.prependItems();
+
+    this.direction = "scroll up";
+  }
+
+  appendItems() {
+    this.addItems("push");
+  }
+
+  prependItems() {
+    this.addItems("unshift");
+  }
+
+  addItems(_method: string) {
+    console.log(_method);
+
+    for (let i = 0; i < this.sum; ++i) {
+      if( _method === 'push'){
+        this.listArray.push(this.countries[i]);
+      }else if( _method === 'unshift'){
+        this.listArray.unshift(this.countries[i]);
+      }
+    }
   }
 }

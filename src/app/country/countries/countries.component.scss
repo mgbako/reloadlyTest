@@ -35,3 +35,10 @@
 .card {
   cursor: pointer;
 }
+
+.search-results-container {
+  margin: 40px;
+  height: 350px;
+  width: 500px;
+  overflow: auto;
+}

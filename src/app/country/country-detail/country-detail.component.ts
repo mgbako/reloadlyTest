@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { ToastrService } from 'ngx-toastr';
 import { filter, first, map, pluck, reduce, tap } from 'rxjs';
 import { AddVisitedCountries, VisitedCountries } from '../country.action';
 import { CountryModel } from '../country.model';
@@ -14,7 +15,7 @@ import { CountryService } from '../country.service';
 export class CountryDetailComponent implements OnInit {
   country: CountryModel;
 
-  constructor(private acRoute: ActivatedRoute, private  countryService:  CountryService, private store:Store<{VisitedCountries}>) { }
+  constructor(private acRoute: ActivatedRoute, private toastr:ToastrService, private  countryService:  CountryService, private store:Store<{VisitedCountries}>) { }
 
   ngOnInit(): void {
     this.acRoute.params.subscribe((param:any) => {
@@ -29,11 +30,15 @@ export class CountryDetailComponent implements OnInit {
     this.countryService.getCountry(name).pipe(
      
     ).subscribe((res:any) => {
-      this.country = res[0];
-      let country:string[] = [];
-      country.push(this.country.name.common)
-      this.store.dispatch(new AddVisitedCountries(this.country.name.common))
-      console.log(this.country)
+     
+        this.country = res[0];
+        let country:string[] = [];
+        country.push(this.country.name.common)
+        this.store.dispatch(new AddVisitedCountries(this.country.name.common))
+        console.log(this.country);
+      
+    }, error => {
+      this.toastr.warning('Not found', 'Country');
     });
   }
 }

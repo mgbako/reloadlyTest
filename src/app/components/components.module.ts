@@ -10,11 +10,14 @@ import { MatListModule } from '@angular/material/list';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatChipsModule} from '@angular/material/chips';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [NavigationComponent],
   imports: [
     CommonModule,
+    RouterModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -23,6 +26,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatListModule,
     MatSlideToggleModule,
     MatChipsModule,
+    MatCardModule,
     FlexLayoutModule
   ],
   exports: [NavigationComponent]

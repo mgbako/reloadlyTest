@@ -12,8 +12,10 @@ import { ComponentsModule } from '../components/components.module';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
-
-
+import {MatBadgeModule} from '@angular/material/badge';
+import {MatButtonModule} from '@angular/material/button';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 @NgModule({
   declarations: [
     CountriesComponent,
@@ -31,7 +33,11 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
     MatCardModule,
     MatGridListModule,
     MatIconModule,
-    ComponentsModule
+    MatBadgeModule,
+    MatButtonModule,
+    ComponentsModule,
+    InfiniteScrollModule,
+    MatProgressBarModule
   ]
 })
 export class CountryModule { }

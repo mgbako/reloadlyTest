@@ -18,9 +18,11 @@
   </div>
 </mat-toolbar>
 
-<div fxLayout="column" fxLayoutAlign="center">
+<mat-card *ngIf="(selectedCountries$ | async).visitedCountries.length > 0">
+  <mat-card-content>
 
-  <mat-chip-list aria-label="Fish selection" >
-    <mat-chip *ngFor="let country of (selectedCountries$ | async).visitedCountries">{{ country }}</mat-chip>
-  </mat-chip-list>
-</div>
+    <mat-chip-list aria-label="Fish selection" >
+      <mat-chip *ngFor="let country of (selectedCountries$ | async).visitedCountries">{{ country }}</mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>
