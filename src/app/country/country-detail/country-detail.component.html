@@ -1,4 +1,6 @@
-<button mat-raised-button [routerLink]="['/']" class="btn-back">Back</button>
+<button mat-raised-button [routerLink]="['/']" class="btn-back">
+  <mat-icon aria-label="Side nav toggle icon">arrow_back</mat-icon>
+  Back</button>
 
 <mat-card>
   <mat-card-content>
@@ -14,13 +16,17 @@
         </div>
       </mat-grid-tile>
       <mat-grid-tile>
-        <h2 class="name">{{ country.name.common }}</h2>
+        <div>
+          <h2 class="name">{{ country.name.common }}</h2>
+          <h4 class="name"><small>Capital: </small>{{ country.capital }}</h4>
+        </div>
       </mat-grid-tile>
       <mat-grid-tile>
         <div>
           <p>Top Level Domain: <span></span></p>
           <p>Currency: <span *ngFor="let item of country.currencies | keyvalue">{{ item.key }}</span></p>
           <p>Languages: <span *ngFor="let item of country.languages | keyvalue">{{ item.value + ', ' }}</span></p>
+          <p>Region: <span>{{ country.region }}</span></p>
         </div>
       </mat-grid-tile>
     </mat-grid-list>

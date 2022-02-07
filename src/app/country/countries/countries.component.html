@@ -14,10 +14,13 @@
  </div>
  <mat-progress-bar mode="indeterminate" *ngIf="loader"></mat-progress-bar>
   <mat-grid-list cols="4" rowHeight="500px">
+
+
   
   <mat-grid-tile *ngFor="let country of countries">
-  
-    <mat-card class="card example-card" (click)="viewDetail(country)">
+    <app-country-card [name]="country.name.common" [flag]="country.flags.svg" [population]="country.population" [region]="country.region" [capital]="country.capital" (click)="viewDetail(country)"></app-country-card>
+
+    <!-- <mat-card class="card example-card" (click)="viewDetail(country)">
       <img mat-card-image [src]="country.flags.svg" [alt]="country.name.common">
       <mat-card-content>
       <h2 class="title">{{ country.name.common }}</h2>
@@ -26,7 +29,7 @@
       <p>Capital: {{ country.capital }}</p>
       </mat-card-content>
       
-    </mat-card>
+    </mat-card> -->
   </mat-grid-tile>
   </mat-grid-list>
 </div>

@@ -12,9 +12,11 @@ import {MatChipsModule} from '@angular/material/chips';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { CountryCardComponent } from './country-card/country-card.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
-  declarations: [NavigationComponent],
+  declarations: [NavigationComponent, CountryCardComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -27,8 +29,10 @@ import { RouterModule } from '@angular/router';
     MatSlideToggleModule,
     MatChipsModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCardModule,
+    MatGridListModule,
   ],
-  exports: [NavigationComponent]
+  exports: [NavigationComponent, CountryCardComponent]
 })
 export class ComponentsModule { }

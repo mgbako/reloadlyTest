@@ -1,0 +1,14 @@
+.example-card {
+  max-width: 400px;
+  min-height: 400px;
+  margin: 0 1rem 1rem;
+
+  img {
+    height: 220px;
+  }
+}
+
+:host {
+  display: block;
+  cursor: pointer;
+}
